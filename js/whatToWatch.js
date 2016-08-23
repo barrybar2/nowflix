@@ -14,7 +14,7 @@
 var loading, geocoder, showTimeUrl1, showTimeUrl2, nearLocation, cinemaName, movieNamesArray, moviesArray, movieCount, cinemaAddress, cinemaDestination, map, key, movieDbUrl, mode, allData, cinemaIndex, cinemaDirection, firstLoad;
 showTimeUrl1 = "https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20html%20where%20url%3D'www.google.com%2Fmovies%3Fsort%3D0%26near%3D";
 showTimeUrl2 = "'%20&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys";
-movieDbUrl = 'http://api.themoviedb.org/3/';
+movieDbUrl = 'https://api.themoviedb.org/3/';
 mode = 'search/movie?query=';
 key = '&api_key=1e76801a7b64fc5408edbe0f65790d2b';
 moviesArray = [];
