@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>NowFlix | Films Top Rated Near You</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link rel="stylesheet" href="css/themes/nowflix.css" />
+        <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile.structure-1.4.5.min.css" /> 
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script> 
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
+        
+        <script type="text/javascript" src="js/cinemaExceptions.js"></script>
+        <script type="text/javascript" src="js/getLocation.js"></script>
+        <script type="text/javascript" src="js/getFilms.js"></script>
+        <script type="text/javascript" src="js/getCinemas.js"></script>
+        <script type="text/javascript" src="js/outputData.js"></script>
+    </head>
+    
+    <body>
+        <!-- BEGIN HOME PAGE-->
+        <div data-role="page" id="home-page">
+            <!-- HEADER SECTION-->
+            <header data-role="header">
+            <div class="centre" style="display: none">
+                <img src="img/fav.png" alt="NowFlix">
+            </div>  
+            </header>   
+            <!-- END HEADER SECTION -->
+            <!-- loading mask section --> 
+            <div id="headerTop">
+                <div id = 'titleGif'>
+                    <img src="img/nowFlixLoad4.gif" alt="NowFlix">
+                </div>
+                <div id='loadingText'>
+                </div>
+            </div>
+            <!-- article section -->
+            <article id="article-id" data-role="content">
+                <ul data-role="listview" class="myListview" data-filter="false">    
+                </ul>
+            </article>
+            <!-- End of input section -->
+            <!-- Enf of Footer section-->
+            
+        </div>
+        <!--end HOME PAGE-->
+        <!-- Start of page one -->
+        <div data-role = "page" id="films">
+
+            <div class="loading" id = "loadFilm"><i class="fa fa-spinner fa-4x"></i></div>
+            <header data-role="header">
+                <h1 id="filmHeader">Films</h1>
+                <a class = "reverseLink" href="#home-page" data-transition="slide" data-direction="reverse"><i class="fa fa-film"></i></a>
+            </header>
+            <article id="article-id" data-role="content">
+                <ul data-role="listview" class="filmview" data-filter="false">  
+                </ul>
+            </article>
+        </div>
+
+        <div data-role = "page" id="filmDetails">
+            <header data-role="header">
+                <h1 id="movieHeader">Films</h1>
+                <a class = "reverseLink" href="#films" data-transition="slide" data-direction="reverse"><i class="fa fa-video-camera"></i></a>
+            </header>
+            <div class = 'filmDetailsInner'>
+            </div>
+
+        </div>
+                
+        <script async defer
+              src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYfxG5mAyZMrr0PU_gvfr7V6LNoi6BWeM&amp;callback=googleReady">
+        </script>
+    </body>
+</html>
