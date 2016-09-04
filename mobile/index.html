@@ -90,6 +90,7 @@
             storageBucket: "",
           };
           firebase.initializeApp(config);
+          var Firebase = firebase.constructor;
           var ref = new Firebase("https://docs-examples.firebaseio.com/web/saving-data/fireblog");
           var usersRef = ref.child("users");
             usersRef.set({
