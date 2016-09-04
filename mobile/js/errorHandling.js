@@ -22,13 +22,22 @@ function stageComp(stage){
 }
 
 setTimeout(function(){
-  var ref = NowFlix.Checks;
+  var data = NowFlix.Checks;
+  var ref = firebase.database().ref(
   var dt = new Date();
   var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-   firebase.database().ref('Errors').set({
-      passed: ref.passed,
-      address: ref.address,
+  var firebase.database().ref('views').on("page_viewed", function(snap){
+    debugger;
+  });
+   ref.once("page_views", function(data){
+    console.log(data);
+   });
+   
+
+   ref('Errors').set({
+      passed: data.passed,
+      address: data.address,
       time: time,
-      stages: ref.stages
+      stages: data.stages
     });
 }, 10000);
