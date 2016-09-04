@@ -26,7 +26,7 @@ setTimeout(function(){
   var ref = firebase.database().ref;
   var dt = new Date();
   var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-   ref.once("page_views", function(data){
+   ref().once("page_views", function(data){
     console.log(data);
    });
    
