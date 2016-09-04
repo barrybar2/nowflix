@@ -3,6 +3,7 @@
     <head>
         <title>NowFlix | Films Top Rated Near You</title>
         <script>
+                var NowFlix = NowFlix || {};
                 //check if running SSL
                 if (window.location.protocol != "https:") {
                     window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
@@ -81,21 +82,6 @@
               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYfxG5mAyZMrr0PU_gvfr7V6LNoi6BWeM&amp;callback=googleReady">
         </script>
         <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
-        <script>
-          // Initialize Firebase
-          var config = {
-            apiKey: "AIzaSyA3JactXlHI_OoadES8gw42ZmVRUy6AoMY",
-            authDomain: "nowflix-a4868.firebaseapp.com",
-            databaseURL: "https://nowflix-a4868.firebaseio.com",
-            storageBucket: "",
-          };
-          firebase.initializeApp(config);
-          firebase.database().ref('test').set({
-                username: 'test',
-                email: 'test1',
-                profile_picture : 'test'
-              });
-            
-        </script>
+        <script type="text/javascript" src="js/errorHandling.js"></script>
     </body>
 </html>

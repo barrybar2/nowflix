@@ -1,7 +1,7 @@
 /* 
  * Get users current location
  */
- var firstLoad, adderss, cinemaDestination;
+ var firstLoad, cinemaDestination;
  homePosition = {};
  cinemaDestination = {};
  document.addEventListener("deviceready", googleReady, false);
@@ -10,6 +10,7 @@
  * Function that is called when Google Maps API is ready
  */
  function googleReady() {
+    stageComp(1);
     geocoder = new google.maps.Geocoder();
     getLocation();
 }
@@ -19,8 +20,10 @@
  */ 
 function getLocation() {
     if (navigator.geolocation) {
+        stageComp(2);
         navigator.geolocation.getCurrentPosition(showPosition);
     } else {
+        stageComp(3);
         alert('<h1> The Website will only work if you show your location!</h1>');
     }
 }
@@ -29,6 +32,7 @@ function getLocation() {
  * get the latitude and longitude positions
  */
 function showPosition(position) {
+    stageComp(4);
     homePosition.lat = position.coords.latitude;
     homePosition.lng = position.coords.longitude;
     codeLatLng(parseFloat(homePosition.lat), parseFloat(homePosition.lng));
@@ -40,20 +44,25 @@ function showPosition(position) {
 function codeLatLng(lat, lng) {
     var latlng, address;
     latlng = new google.maps.LatLng(lat, lng);
+    stageComp(5);
     geocoder.geocode({
         'latLng': latlng
     }, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             if (results[1]) {
                 //formatted address
+                stageComp(6);
                 firstLoad = true;
                 address = results[0].formatted_address;
+                NowFlix.Checks.address = address;
                 getMovies(address);
                 getLatLong(address);
             } else {
+                stageComp(7);
                 alert("No results found");
             }
         } else {
+            stageComp(8);
             alert("Geocoder failed due to: " + status);
         }
     });
@@ -90,6 +99,7 @@ function getMovies(loc) {
     nearLocation = loc.replace(/ /g, '%2B');
     nearLocation = nearLocation.replace(/'/g, '%2527');
     nearLocation = nearLocation.replace(/,/g, '%252C');
+    stageComp(9);
     /*
      * Ajax call to get the location of the user
      */

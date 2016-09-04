@@ -15,23 +15,30 @@ key = '&api_key=1e76801a7b64fc5408edbe0f65790d2b';
  * Build up movie object
  */
 function buildMovieObject(data) {
+    stageComp(17);
     var divs, movieResults, movieObj, movieObjLeft, movieObjRight, innerArr;
     if(!data.query.results){
        alert('Oops no data is returning - Please try again later! :) ');
+       stageComp(18);
     } else {
+        stageComp(19);
     divs = data.query.results.body.div;
     /*
      * Looping through the google.com/movies website, and build up an object
      */
     $.each(divs, function(index, div) {
+        stageComp(20);
         if (div.id && div.id === "results") {
+            stageComp(21);
             /*
              * Set the main data object
              */      
             movieResults = div.div.div.div[cinemaIndex];
 
             if (!movieResults) {
+                stageComp(22);
                 if (cinemaIndex === 0) {
+                    stageComp(23);
                     alert('No cinema is returned');
                 } else {
                     cinemaIndex = 0;
@@ -146,7 +153,7 @@ function callNewCinema(index) {
             cinemaIndex++;
         }
         buildMovieObject(allData);
-    }, 2000);    
+    }, 2000);     
 }
 
 /*

@@ -13,6 +13,7 @@ function showSearchResults(results){
     $('#headerTop').hide();
     $('.centre').show();
     if(results){
+        stageComp(2);
 
        for(i=0; i<results.length; i++){
       var liString =    '<li>' + 

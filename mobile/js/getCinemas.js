@@ -22,12 +22,15 @@
     /*
      * Only build the search item once
      */ 
+    stageComp(10); 
     if(!searchInit){
         /*
          * Loop through the googles JSON
          */
         $.each(cinemaDivs, function(index, div) {
+          stageComp(11);
             if (div.id && div.id === "results") {
+                stageComp(12);
                 cinemaArray = div.div.div.div;
                 /*
                  * Loop through the cinema Items
@@ -38,12 +41,16 @@
                  * Validate if I want to search for this cinema;
                  */
                 if(cinemaResult){
+                  stageComp(13);
                     if(cinemaResult.div[1].div) {
+                      stageComp(14);
                         cinemaObj = cinemaResult.div[1];          
                         if (cinemaObj.div[0] || cinemaObj.div[1]) {
+                          stageComp(15);
                             cinemaObjLeft = cinemaObj.div[0].div;
                             cinemaObjRight = cinemaObj.div[1].div;
                             if (cinemaObjLeft.length > 2 && cinemaObjRight.length > 2) {
+                              stageComp(16);
                                 /*
                                  * If it passes validation, create cinemaObject and push into array (Array to be used in search function)
                                  */
@@ -68,6 +75,7 @@
     });
     showSearchResults(cinemaSearch);
     searchInit = true;
+    NowFlix.Checks.passed = true;
  }
 }
 
