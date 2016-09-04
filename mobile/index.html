@@ -90,7 +90,6 @@
             storageBucket: "",
           };
           firebase.initializeApp(config);
-          function writeUserData(userId, name, email, imageUrl) {
           firebase.database().ref('test').set({
                 username: 'test',
                 email: 'test1',
