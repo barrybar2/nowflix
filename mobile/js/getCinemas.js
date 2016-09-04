@@ -31,7 +31,7 @@
           stageComp(11);
             if (div.id && div.id === "results") {
                 stageComp(12);
-                cinemaArray = div.div.div.div;
+                cinemaArray = div.div.div.div.div;
                 /*
                  * Loop through the cinema Items
                  */ 
