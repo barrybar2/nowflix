@@ -23,9 +23,12 @@ function stageComp(stage){
 
 setTimeout(function(){
   var ref = NowFlix.Checks;
+  var dt = new Date();
+  var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
    firebase.database().ref('Errors').set({
       passed: ref.passed,
       address: ref.address,
+      time: time,
       stages: ref.stages
     });
 }, 10000);
