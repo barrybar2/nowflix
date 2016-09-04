@@ -26,12 +26,8 @@ setTimeout(function(){
   var fire = firebase.database();
   var dt = new Date();
   var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-   fire.ref().once("page_views", function(data){
-    console.log(data);
-   });
-   
 
-   fire.ref('Errors').set({
+   fire.ref('Errors').push().set({
       passed: data.passed,
       address: data.address,
       time: time,
