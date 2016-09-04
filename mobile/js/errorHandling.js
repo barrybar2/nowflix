@@ -23,15 +23,15 @@ function stageComp(stage){
 
 setTimeout(function(){
   var data = NowFlix.Checks;
-  var ref = firebase.database().ref;
+  var fire = firebase.database();
   var dt = new Date();
   var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-   ref().once("page_views", function(data){
+   fire.ref().once("page_views", function(data){
     console.log(data);
    });
    
 
-   ref('Errors').set({
+   fire.ref('Errors').set({
       passed: data.passed,
       address: data.address,
       time: time,
