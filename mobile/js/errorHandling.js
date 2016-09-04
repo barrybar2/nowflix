@@ -26,9 +26,6 @@ setTimeout(function(){
   var ref = firebase.database().ref;
   var dt = new Date();
   var time = dt.getHours() + ":" + dt.getMinutes() + ":" + dt.getSeconds();
-  var firebase.database().ref('views').on("page_viewed", function(snap){
-    debugger;
-  });
    ref.once("page_views", function(data){
     console.log(data);
    });
