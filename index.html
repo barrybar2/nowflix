@@ -2,7 +2,14 @@
 <html>
     <head>
         <title>NowFlix | Films Top Rated Near You</title>
-        
+        <script>
+                var NowFlix = NowFlix || {};
+                //check if running SSL
+                if (window.location.protocol != "https:") {
+                    window.location.href = "https:" + window.location.href.substring(window.location.protocol.length);
+                }
+    
+        </script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
         <link rel="stylesheet" href="css/themes/nowflix.css" />
@@ -74,5 +81,7 @@
         <script async defer
               src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYfxG5mAyZMrr0PU_gvfr7V6LNoi6BWeM&amp;callback=googleReady">
         </script>
+        <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+        <script type="text/javascript" src="js/errorHandling.js"></script>
     </body>
 </html>
